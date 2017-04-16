@@ -9,7 +9,7 @@
   "scripts": {
     "deploy": "brunch build --production",
     "watch": "brunch watch --stdin",
-    "start": "electron ./main.js"
+    "start": "cross-env NODE_ENV=development electron ./main.js"
   },
   "dependencies": {
     "phoenix": "file:deps/phoenix",
@@ -19,6 +19,7 @@
     "babel-brunch": "~6.0.0",
     "brunch": "2.7.4",
     "clean-css-brunch": "~2.0.0",
+    "cross-env": "^4.0.0",
     "css-brunch": "~2.0.0",
     "devtron": "^1.4.0",
     "electron": "^1.6.2",

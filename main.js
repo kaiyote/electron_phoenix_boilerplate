@@ -1,21 +1,28 @@
 let { app, BrowserWindow } = require('electron')
-let cp = require('child_process')
+let { spawn, spawnSync } = require('child_process')
 
 let mainWindow = null
 let devMode = process.env.NODE_ENV === 'development'
 
-let phoenix = cp.spawn('iex', ['--sname', 'electron', '-S', 'mix', 'phoenix.server'], {
-  cwd: __dirname
-})
+let command = 'iex'
+let args = ['--sname', 'electron', '-S', 'mix', 'phoenix.server']
 
-if (devMode) require('node-debug')
+if (process.platform === 'win32') {
+  args.unshift('/d', '/s', '/c', command)
+  command = process.env.comspec || 'cmd.exe'
+}
+
+let phoenix = spawn(command, args, { cwd: __dirname })
 
 app.on('window-all-closed', () => {
-  if (devMode) app.quit()
+  if (process.platform !== 'darwin') app.quit()
 })
 
 app.on('quit', () => {
-  phoenix.kill()
+  // windows needs to run `taskkill` since it actually spawns cmd and tells that to spawn iex
+  // it also needs to run it synchronously so it actually kills before electron quits
+  if (process.platform === 'win32') spawnSync('taskkill', ['/pid', phoenix.pid, '/f', '/t'])
+  else phoenix.kill()
 })
 
 app.on('ready', () => {
