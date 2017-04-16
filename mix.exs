@@ -9,7 +9,8 @@ defmodule ElectronPhoenixBoilerplate.Mixfile do
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps()]
+     deps: deps(),
+     dialyzer: [plt_add_deps: :transitive]]
   end
 
   # Configuration for the OTP application.
@@ -33,6 +34,8 @@ defmodule ElectronPhoenixBoilerplate.Mixfile do
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:credo, "~> 0.7", only: [:dev, :test]},
+     {:dialyxir, "~> 0.5", only: [:dev]}]
   end
 end
