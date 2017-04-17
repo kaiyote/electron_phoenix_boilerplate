@@ -23,6 +23,7 @@ Should anybody be doing anything? Should you use this in a real, production-y se
 ## TODO
   - [x] Have `electron` spawn and kill an erlang node running `iex -S mix phoenix.server`
   - [x] Switch the elixir project to an umbrella project so that business logic can be fully separate from UI stuff
+  - [ ] Make Ye Ol' Standard Counter Example app
   - [ ] Use `distillery` to produce a `production` build
   - [ ] Make a final `electron` asar (probably with unpacked stuff for the `elixir` assets)
 
