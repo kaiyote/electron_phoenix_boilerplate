@@ -20,7 +20,9 @@
         # You can give explicit globs or simply directories.
         # In the latter case `**/*.{ex,exs}` will be used.
         included: ["lib/", "src/", "web/", "apps/"],
-        excluded: [~r"/_build/", ~r"/deps/"]
+        # including "apps/" also pulls in a lot of folders that would be excluded normally
+        # outside of "apps/"
+        excluded: [~r"/_build/", ~r"/deps/", ~r"/node_modules/", ~r"/test/", ~r"/config/"]
       },
       #
       # If you create your own checks, you must specify the source files for
@@ -33,7 +35,7 @@
       #
       # If you want to enforce a style guide and need a more traditional linting
       # experience, you can change `strict` to `true` below:
-      strict: false,
+      strict: true,
       #
       # If you want to use uncolored output by default, you can change `color`
       # to `false` below:

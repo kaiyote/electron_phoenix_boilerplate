@@ -1,29 +1,20 @@
 {
-  "name": "electron-phoenix-boilerplate",
+  "name": "electron_phoenix_boilerplate",
   "version": "0.0.1",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/kaiyote/electron_phoenix_boilerplate"
+  "main": "main.js",
+  "repository": "https://github.com/kaiyote/electron_phoenix_boilerplate",
+  "author": {
+    "name": "Timothy Huddle",
+    "email": "blazhen88@gmail.com"
   },
   "license": "MIT",
   "scripts": {
-    "deploy": "brunch build --production",
-    "watch": "brunch watch --stdin",
-    "start": "cross-env NODE_ENV=development electron ./main.js"
+    "start": "cross-env NODE_ENV=development electron ./main.js",
+    "postinstall": "cd apps/electron_phoenix && yarn"
   },
   "dependencies": {
-    "phoenix": "file:deps/phoenix",
-    "phoenix_html": "file:deps/phoenix_html"
-  },
-  "devDependencies": {
-    "babel-brunch": "~6.0.0",
-    "brunch": "2.7.4",
-    "clean-css-brunch": "~2.0.0",
     "cross-env": "^4.0.0",
-    "css-brunch": "~2.0.0",
     "devtron": "^1.4.0",
-    "electron": "^1.6.2",
-    "javascript-brunch": "~2.0.0",
-    "uglify-js-brunch": "~2.0.1"
+    "electron": "^1.6.2"
   }
 }
