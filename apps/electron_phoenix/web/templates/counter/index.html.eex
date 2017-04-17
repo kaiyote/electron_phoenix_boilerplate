@@ -1,0 +1,6 @@
+<div class="jumbotron">
+  <h2><%= @value %></h2>
+  <a href="/increment/<%= @value %>">+</a>
+  <a href="/decrement/<%= @value %>">-</a>
+  <a href="/increment_odd/<%= @value %>">odd</a>
+</div>
