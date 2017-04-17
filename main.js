@@ -8,6 +8,7 @@ let command = 'iex'
 let args = ['--sname', 'electron', '-S', 'mix', 'phoenix.server']
 
 if (process.platform === 'win32') {
+  // garsh durn windows-nodejs and its inability to spawn a non-exe
   args.unshift('/d', '/s', '/c', command)
   command = process.env.comspec || 'cmd.exe'
 }
