@@ -17,11 +17,7 @@ defmodule ElectronPhoenix.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    get "/counter", CounterController, :index
-    get "/counter/:value", CounterController, :index
-    get "/increment/:value", CounterController, :increment
-    get "/decrement/:value", CounterController, :decrement
-    get "/increment_odd/:value", CounterController, :increment_if_odd
+    get "/counter", PageController, :counter
   end
 
   # Other scopes may use custom stacks.
