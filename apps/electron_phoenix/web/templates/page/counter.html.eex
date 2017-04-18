@@ -11,3 +11,4 @@
   <button onclick="counter.incrementIfOdd()">odd</button>
   <button onclick="counter.incrementAsync()">async</button>
 </div>
+<a class="lead" href="/">to Home</a>
