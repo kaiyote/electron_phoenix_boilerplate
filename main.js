@@ -14,6 +14,14 @@ if (process.platform === 'win32') {
 }
 
 let phoenix = spawn(command, args, { cwd: __dirname })
+phoenix.stdout.once('data', function open_window () {
+  if (mainWindow) {
+    mainWindow.loadURL('http://localhost:4000')
+  } else {
+    console.log('waiting for electron to start...')
+    setTimeout(open_window, 50)
+  }
+})
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit()
@@ -32,8 +40,6 @@ app.on('ready', () => {
     width: 1024,
     height: 720
   })
-
-  mainWindow.loadURL('http://localhost:4000')
 
   mainWindow.webContents.on('did-finish-load', () => {
     mainWindow.show()
