@@ -13,8 +13,8 @@
     "postinstall": "cd apps/electron_phoenix && yarn"
   },
   "dependencies": {
-    "cross-env": "^4.0.0",
+    "cross-env": "^7.0.2",
     "devtron": "^1.4.0",
-    "electron": "^1.6.2"
+    "electron": "^8.2.1"
   }
 }
