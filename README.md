@@ -11,7 +11,7 @@ Should anybody be doing anything? Should you use this in a real, production-y se
 
 ## Getting Setup
   1. Make sure [Elixir](http://elixir-lang.org/install.html), [Erlang](http://www.erlang.org/downloads), [Phoenix](http://www.phoenixframework.org/docs/installation), and [Yarn](https://yarnpkg.com/en/docs/install) are installed. The most current versions at time of writing are: 1.4.2, 19.3, 1.2.0, and 0.23.2 respectively.
-  2. Update all your local elixir tooling: `$ mix do local.hex, local.rebar, local.phoenix`
+  2. Update all your local elixir tooling: `$ mix do local.hex, local.rebar, local.phx`
   3. Install the elixir dependencies: `$ mix do deps.get, deps.compile, dialyzer --plt`
   4. Install the node dependencies: `$ yarn` (this will install the dependencies in the phoenix sub app as well)
   5. Fire up `phoenix.server` once on its own, just to be sure it's all ready to go: `$ iex -S mix phoenix.server` (you can shut it down after it starts up successfully)
