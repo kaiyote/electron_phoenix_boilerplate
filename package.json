@@ -1,20 +1,28 @@
 {
   "name": "electron_phoenix_boilerplate",
-  "version": "0.0.1",
-  "main": "main.js",
-  "repository": "https://github.com/kaiyote/electron_phoenix_boilerplate",
+  "version": "0.0.2",
+  "description": "Is embedding an elixir application inside of an Electron desktop app a terrible idea?",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development electron ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaiyote/electron_phoenix_boilerplate.git"
+  },
   "author": {
-    "name": "Timothy Huddle",
+    "name": "Tim Huddle",
     "email": "blazhen88@gmail.com"
   },
   "license": "MIT",
-  "scripts": {
-    "start": "cross-env NODE_ENV=development electron ./main.js",
-    "postinstall": "cd apps/electron_phoenix && yarn"
+  "bugs": {
+    "url": "https://github.com/kaiyote/electron_phoenix_boilerplate/issues"
+  },
+  "homepage": "https://github.com/kaiyote/electron_phoenix_boilerplate#readme",
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   },
   "dependencies": {
-    "cross-env": "^7.0.2",
-    "devtron": "^1.4.0",
-    "electron": "^8.2.4"
+    "electron": "^15.3.1"
   }
 }

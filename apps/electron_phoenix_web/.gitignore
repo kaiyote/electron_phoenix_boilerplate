@@ -19,10 +19,16 @@ erl_crash.dump
 # Also ignore archive artifacts (built via "mix archive.build").
 *.ez
 
-# Temporary files, for example, from tests.
-/tmp
+# Ignore package tarball (built via "mix hex.build").
+electron_phoenix_web-*.tar
 
-# ElixirLS VsCode stuff
-/.elixir_ls/
+# Ignore assets that are produced by build tools.
+/priv/static/assets/
 
-/node_modules/
+# Ignore digested assets cache.
+/priv/static/cache_manifest.json
+
+# In case you use Node.js/npm, you want to ignore these.
+npm-debug.log
+/assets/node_modules/
+

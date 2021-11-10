@@ -1,28 +1,45 @@
-defmodule ElectronPhoenixBoilerplate.Mixfile do
+defmodule ElectronPhoenix.Umbrella.MixProject do
   use Mix.Project
 
   def project do
-    [apps_path: "apps",
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
-     deps: deps(),
-     dialyzer: [plt_add_deps: :transitive]]
+    [
+      apps_path: "apps",
+      version: "0.1.0",
+      start_permanent: Mix.env() == :prod,
+      deps: deps(),
+      aliases: aliases()
+    ]
   end
 
   # Dependencies can be Hex packages:
   #
-  #   {:my_dep, "~> 0.3.0"}
+  #   {:mydep, "~> 0.3.0"}
   #
   # Or git/path repositories:
   #
-  #   {:my_dep, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+  #   {:mydep, git: "https://github.com/elixir-lang/mydep.git", tag: "0.1.0"}
   #
   # Type "mix help deps" for more examples and options.
   #
   # Dependencies listed here are available only for this project
-  # and cannot be accessed from applications inside the apps folder
+  # and cannot be accessed from applications inside the apps/ folder.
   defp deps do
-    [{:credo, "~> 0.7", only: [:dev, :test]},
-     {:dialyxir, "~> 0.5", only: :dev}]
+    []
+  end
+
+  # Aliases are shortcuts or tasks specific to the current project.
+  # For example, to install project dependencies and perform other setup tasks, run:
+  #
+  #     $ mix setup
+  #
+  # See the documentation for `Mix` for more info on aliases.
+  #
+  # Aliases listed here are available only for this project
+  # and cannot be accessed from applications inside the apps/ folder.
+  defp aliases do
+    [
+      # run `mix setup` in all child apps
+      setup: ["cmd mix setup"]
+    ]
   end
 end
