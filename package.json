@@ -23,6 +23,6 @@
     "cross-env": "^7.0.3"
   },
   "dependencies": {
-    "electron": "^15.3.1"
+    "electron": "^18.3.7"
   }
 }
